@@ -23,7 +23,10 @@
     }
 
     function countNumber($number){
-      return 1;
+      for($i=1;$i<=$number;$i++){
+        $result[$i] = $this->printResult($i);
+      }
+      return implode(',', $result);
     }
   }
 ?>
