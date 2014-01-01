@@ -11,7 +11,8 @@ class FizzBuzzTest extends PHPUnit_Framework_TestCase{
         array(2,2),
         array(3,'Fizz'),
         array(5,'Buzz'),
-        array(6,'Fizz')
+        array(6,'Fizz'),
+        array(10,'Buzz')
       );
       return $setInputAndExpected;
     }
