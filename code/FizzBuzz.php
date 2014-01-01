@@ -28,6 +28,5 @@
       $check = ["",$this->number,$this->number];
       return $check[$this->number%3];
     }
-
  }
 ?>
