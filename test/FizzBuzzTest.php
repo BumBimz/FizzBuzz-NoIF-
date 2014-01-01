@@ -1,16 +1,23 @@
 <?php
-  class FizzBuzzTest extends PHPUnit_Framework_TestCase{
-    function testFizzBuzzGivenOneWhenCountNumberThenReturnOne(){
-      $expected = 1;
-      $fizzBuzz = new FizzBuzz();
-      $actual = $fizzBuzz->countNumber(1);
-      $this->assertEquals($expected,$actual);
+class FizzBuzzTest extends PHPUnit_Framework_TestCase{
+
+    function setUp(){
+      $this->fizzBuzz = new FizzBuzz();
     }
 
-    function testFizzBuzzGivenTwoWhenCountNumberThenReturnTwo(){
-      $expected = 2;
-      $fizzBuzz = new FizzBuzz();
-      $actual = $fizzBuzz->countNumber(2);
+    function providerFizzBuzz(){
+      $setInputAndExpected = array(
+        array(1,1),
+        array(2,2)
+      );
+      return $setInputAndExpected;
+    }
+
+    /**
+     * @dataProvider providerFizzBuzz
+     */
+    function testFizzBuzzGivenNumberWhenCountNumberThenReturnExpected($number,$expected){
+      $actual = $this->fizzBuzz->countNumber($number);
       $this->assertEquals($expected,$actual);
     }
 
