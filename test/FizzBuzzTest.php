@@ -26,6 +26,11 @@ class FizzBuzzTest extends PHPUnit_Framework_TestCase{
       $actual = $this->fizzBuzz->printResult($number);
       $this->assertEquals($expected,$actual);
     }
-    
+
+    function testFizzBuzzGivenOneWhenStartCountNumberReturnExpected(){
+      $expected = "1";
+      $actual = $this->fizzBuzz->countNumber(1);
+      $this->assertEquals($expected,$actual);
+    }
   }
 ?>

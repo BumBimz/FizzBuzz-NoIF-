@@ -21,5 +21,9 @@
       $check = ["",$this->number,$this->number];
       return $check[$this->number%3];
     }
+
+    function countNumber($number){
+      return 1;
+    }
   }
 ?>
