@@ -1,5 +1,12 @@
 <?php
   class FizzBuzz{
+    function countNumber($number){
+      for($i=1;$i<=$number;$i++){
+        $result[$i] = $this->printResult($i);
+      }
+      return implode(',', $result);
+    }
+
     function printResult($number){
       $this->number = $number;
       $result =  $this->checkfizz().$this->checkbuzz();
@@ -22,11 +29,5 @@
       return $check[$this->number%3];
     }
 
-    function countNumber($number){
-      for($i=1;$i<=$number;$i++){
-        $result[$i] = $this->printResult($i);
-      }
-      return implode(',', $result);
-    }
-  }
+ }
 ?>
