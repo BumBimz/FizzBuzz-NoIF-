@@ -19,6 +19,15 @@ class FizzBuzzTest extends PHPUnit_Framework_TestCase{
       return $setInputAndExpected;
     }
 
+    function providerCountFizzBuzz(){
+      $setInputAndExpected = array(
+        array(1,"1"),
+        array(2,"1,2"),
+        array(15,"1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz,13,14,FizzBuzz")
+      );
+      return $setInputAndExpected;
+    }
+
     /**
      * @dataProvider providerFizzBuzz
      */
@@ -27,21 +36,12 @@ class FizzBuzzTest extends PHPUnit_Framework_TestCase{
       $this->assertEquals($expected,$actual);
     }
 
-    function testFizzBuzzGivenOneWhenStartCountNumberReturnExpected(){
-      $expected = "1";
-      $actual = $this->fizzBuzz->countNumber(1);
+    /**
+     * @dataProvider providerCountFizzBuzz
+     */
+    function testFizzBuzzGivenOneWhenStartCountNumberReturnExpected($number,$expected){
+      $actual = $this->fizzBuzz->countNumber($number);
       $this->assertEquals($expected,$actual);
     }
-
-    function testFizzBuzzGivenTwoWhenStartCountNumberReturnExpected(){
-      $expected = "1,2";
-      $actual = $this->fizzBuzz->countNumber(2);
-      $this->assertEquals($expected,$actual);
-    }
-     function testFizzBuzzGivenFifteenWhenStartCountNumberReturnExpected(){
-      $expected = "1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz,13,14,FizzBuzz";
-      $actual = $this->fizzBuzz->countNumber(15);
-      $this->assertEquals($expected,$actual);
-    } 
   }
 ?>
