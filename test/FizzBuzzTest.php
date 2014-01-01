@@ -22,10 +22,10 @@ class FizzBuzzTest extends PHPUnit_Framework_TestCase{
     /**
      * @dataProvider providerFizzBuzz
      */
-    function testFizzBuzzGivenNumberWhenCountNumberThenReturnExpected($number,$expected){
-      $actual = $this->fizzBuzz->countNumber($number);
+    function testFizzBuzzGivenNumberWhenprintResultThenReturnExpected($number,$expected){
+      $actual = $this->fizzBuzz->printResult($number);
       $this->assertEquals($expected,$actual);
     }
-
+    
   }
 ?>

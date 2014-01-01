@@ -1,13 +1,25 @@
 <?php
   class FizzBuzz{
-    function countNumber($number){
-      if($number%15==0)
-        return 'FizzBuzz';
-      if($number%3==0)
-        return 'Fizz';
-      if($number%5==0)
-        return 'Buzz';
-      return $number; 
+    function printResult($number){
+      $this->number = $number;
+      $result =  $this->checkfizz().$this->checkbuzz();
+      return $result;
+    }
+
+    function checkfizz(){
+      $fizz = ["Fizz","",""];
+      return $fizz[$this->number%3];
+    }
+
+    function checkbuzz(){
+      $check = $this->checknumber();
+      $buzz = ["Buzz",$check,$check,$check,$check];
+      return $buzz[$this->number%5];
+    }
+
+    function checknumber(){
+      $check = ["",$this->number,$this->number];
+      return $check[$this->number%3];
     }
   }
 ?>
