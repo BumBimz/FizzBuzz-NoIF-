@@ -38,5 +38,10 @@ class FizzBuzzTest extends PHPUnit_Framework_TestCase{
       $actual = $this->fizzBuzz->countNumber(2);
       $this->assertEquals($expected,$actual);
     }
+     function testFizzBuzzGivenFifteenWhenStartCountNumberReturnExpected(){
+      $expected = "1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz,13,14,FizzBuzz";
+      $actual = $this->fizzBuzz->countNumber(15);
+      $this->assertEquals($expected,$actual);
+    } 
   }
 ?>
