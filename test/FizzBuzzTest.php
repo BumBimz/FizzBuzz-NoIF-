@@ -8,7 +8,8 @@ class FizzBuzzTest extends PHPUnit_Framework_TestCase{
     function providerFizzBuzz(){
       $setInputAndExpected = array(
         array(1,1),
-        array(2,2)
+        array(2,2),
+        array(3,'Fizz')
       );
       return $setInputAndExpected;
     }
